@@ -1,6 +1,6 @@
 # LLM Anatomy
 
-An interactive visualizer that lets you see inside a language model as it processes text. Type a sentence, run it through GPT-2 Medium, and watch every step of the transformer pipeline — from tokenization to final prediction — rendered in real time.
+An interactive visualizer that lets you see inside a language model as it processes text. Type a sentence, run it through GPT-2 Medium, and watch every step of the transformer pipeline
 
 No approximations, no toy models. Every visualization is driven by real hidden states, real attention weights, and real logits from a full forward pass.
 
@@ -8,33 +8,33 @@ No approximations, no toy models. Every visualization is driven by real hidden s
 
 ## Features
 
-**Interactive pipeline flow** — A visual pipeline strip shows all 5 processing steps (Input, Tokens, Embed, Layers, Predict) with the current step highlighted. Gives you a bird's-eye view of where you are in the model.
+**Interactive pipeline flow** A visual pipeline strip shows all 5 processing steps (Input, Tokens, Embed, Layers, Predict) with the current step highlighted. Gives you a bird's-eye view of where you are in the model.
 
-**Tokenization viewer** — See exactly how the model splits your text into tokens, each with its vocabulary ID out of 50,257 entries. Click any token to track how the model processes it through every layer. A leading dot (·) shows where the tokenizer saw a word boundary.
+**Tokenization viewer** See exactly how the model splits your text into tokens, each with its vocabulary ID out of 50,257 entries. Click any token to track how the model processes it through every layer. A leading dot (·) shows where the tokenizer saw a word boundary.
 
 ![Tokenization](docs/screenshots/02-tokenization.png)
 
-**3D embedding space** — Hidden states at any layer projected into 3D via PCA. Tokens that the model considers semantically similar cluster together. Drag to rotate, double-click to auto-spin. Variance percentages show how much information each axis captures. Scrub the layer slider to watch tokens rearrange as the model refines its internal representation.
+**3D embedding space** Hidden states at any layer projected into 3D via PCA. Tokens that the model considers semantically similar cluster together. Drag to rotate, double-click to auto-spin. Variance percentages show how much information each axis captures. Scrub the layer slider to watch tokens rearrange as the model refines its internal representation.
 
 ![3D Embedding](docs/screenshots/03-embedding-3d.png)
 
-**Layer slider** — A scrubber across all 24 transformer layers (plus the input embedding). Moving the slider updates the 3D embedding, attention heatmap, and logit lens in real time so you can watch the model's understanding develop layer by layer.
+**Layer slider** A scrubber across all 24 transformer layers (plus the input embedding). Moving the slider updates the 3D embedding, attention heatmap, and logit lens in real time so you can watch the model's understanding develop layer by layer.
 
-**Attention heatmap** — Shows which tokens the model connects to each other at each layer. View all 16 attention heads blended together or drill into individual heads with the dropdown. Color scale runs from "ignores" (blue) to "strongly connected" (red). Includes explanatory notes — for example, GPT-2's tendency to park attention on the first token as a default when it doesn't have a strong reason to look elsewhere.
+**Attention heatmap** Shows which tokens the model connects to each other at each layer. View all 16 attention heads blended together or drill into individual heads with the dropdown. Color scale runs from "ignores" (blue) to "strongly connected" (red). Includes explanatory notes for example, GPT-2's tendency to park attention on the first token as a default when it doesn't have a strong reason to look elsewhere.
 
 ![Attention Heatmap](docs/screenshots/04-attention.png)
 
-**Logit lens** — Applies the model's output head to intermediate hidden states at every layer, revealing what the model would predict if it stopped at that layer. Watch predictions evolve from random noise at early layers to confident, coherent guesses by the final layer. Green highlights mark each token's top prediction.
+**Logit lens** Applies the model's output head to intermediate hidden states at every layer, revealing what the model would predict if it stopped at that layer. Watch predictions evolve from random noise at early layers to confident, coherent guesses by the final layer. Green highlights mark each token's top prediction.
 
 ![Logit Lens](docs/screenshots/05-logit-lens.png)
 
-**Top-K predictions** — The model's top 10 next-word predictions ranked by confidence after softmax, displayed as a bar chart. This is the final output — what the model actually thinks comes next.
+**Top-K predictions** The model's top 10 next-word predictions ranked by confidence after softmax, displayed as a bar chart. This is the final output and what the model actually thinks comes next.
 
 ![Top-K Predictions](docs/screenshots/06-predictions.png)
 
-**Context view** — Click a token in the tokenization step to see which other tokens it draws information from via attention, ranked by weight. Shows the top 5 context sources with their attention scores.
+**Context view** Click a token in the tokenization step to see which other tokens it draws information from via attention, ranked by weight. Shows the top 5 context sources with their attention scores.
 
-**Model caching** — The backend keeps loaded models in memory. Switching back to a previously loaded model is instant — no re-download or re-initialization.
+**Model caching** The backend keeps loaded models in memory. Switching back to a previously loaded model is instant no re-download or re-initialization.
 
 ## Installation
 
