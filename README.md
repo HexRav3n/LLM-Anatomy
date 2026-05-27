@@ -2,8 +2,6 @@
 
 An interactive visualizer that lets you see inside a language model as it processes text. Type a sentence, run it through GPT-2 Medium, and watch every step of the transformer pipeline
 
-No approximations, no toy models. Every visualization is driven by real hidden states, real attention weights, and real logits from a full forward pass.
-
 ![Overview](docs/screenshots/01-overview.png)
 
 ## Features
