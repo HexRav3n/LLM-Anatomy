@@ -8,7 +8,7 @@ An interactive visualizer that lets you see inside a language model as it proces
 
 **Interactive pipeline flow** A visual pipeline strip shows all 5 processing steps (Input, Tokens, Embed, Layers, Predict) with the current step highlighted. Gives you a bird's-eye view of where you are in the model.
 
-**Tokenization viewer** See exactly how the model splits your text into tokens, each with its vocabulary ID out of 50,257 entries. Click any token to track how the model processes it through every layer. A leading dot (·) shows where the tokenizer saw a word boundary.
+**Tokenization viewer** See exactly how the model splits your text into tokens, each with its vocabulary ID. An under-the-hood guide explains GPT-2's byte-level BPE process, vocabulary lookup, why an ID selects a specific embedding row, why the tokenizer must match the weights, and how `vocab.json`, `merges.txt`, and `tokenizer.json` relate. Click any token to follow its live path from text fragment to ID to embedding. A leading dot (·) shows where the tokenizer saw a word boundary.
 
 ![Tokenization](docs/screenshots/02-tokenization.png)
 

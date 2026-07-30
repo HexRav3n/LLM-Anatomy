@@ -143,6 +143,7 @@ export default function App() {
           <TokenizationView
             inputText={text}
             tokens={result.tokens}
+            vocabSize={result.config.vocab}
             selectedIdx={selectedTokenIdx}
             onSelectToken={handleSelectToken}
             contextSourceIndices={contextSourceIndices}
